@@ -7,7 +7,7 @@
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
 Version:	%{mod_version}
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/downloads/
@@ -126,6 +126,3 @@ fi
 %dir %{_var}/www/mono
 %dir %{_var}/www/.wapi
 %dir %attr(0755,apache,apache) %{_localstatedir}/%{name}
-
-
-
