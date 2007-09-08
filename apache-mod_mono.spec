@@ -6,7 +6,7 @@
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
 Version:	%version
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/downloads/
@@ -26,8 +26,6 @@ BuildRequires:	autoconf2.5
 BuildRequires:  file
 Requires:	xsp >= 1.2.5
 BuildRequires:	file
-Provides:	apache2-mod_mono
-Obsoletes:	apache2-mod_mono
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
