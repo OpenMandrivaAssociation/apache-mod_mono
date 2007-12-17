@@ -27,7 +27,6 @@ BuildRequires:  file
 Requires:	xsp >= 1.2.5
 BuildRequires:	file
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 This is an experimental module that allows you to run ASP.NET
