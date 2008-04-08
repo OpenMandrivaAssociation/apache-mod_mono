@@ -1,4 +1,4 @@
-%define version 1.2.6
+%define version 1.9
 
 %define module_path %{_libdir}/apache-extramodules
 %define module_name mod_mono
@@ -6,7 +6,7 @@
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
 Version:	%version
-Release:	%mkrel 2
+Release:	%mkrel 1
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/
