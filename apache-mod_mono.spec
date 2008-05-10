@@ -1,12 +1,10 @@
-%define version 1.9
-
 %define module_path %{_libdir}/apache-extramodules
 %define module_name mod_mono
 
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
-Version:	%version
-Release:	%mkrel 1
+Version:	1.9
+Release:	%mkrel 2
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/
@@ -27,13 +25,12 @@ BuildRequires:  file
 Requires:	xsp >= 1.2.5
 BuildRequires:	file
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-This is an experimental module that allows you to run ASP.NET
-pages on Unix with Apache and Mono.
-Please read the included INSTALL file for how to get the mod-mono
-server running.
+This is an experimental module that allows you to run ASP.NET pages on Unix
+with Apache and Mono. Please read the included INSTALL file for how to get the
+mod-mono server running.
 
 %prep
 
@@ -90,7 +87,7 @@ if [ "$1" = "0" ]; then
 fi
 		    
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 		    
 %files
 %defattr(-,root,root)
