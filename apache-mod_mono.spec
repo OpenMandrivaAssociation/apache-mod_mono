@@ -47,7 +47,7 @@ libtoolize --copy --force; aclocal-1.7; automake-1.7 --add-missing --copy; autoc
 
 # Build Apache Module
 export CPPFLAGS="`apr-1-config --cppflags`"
-%configure2_5x \
+%configure2_5x --localstatedir=/var/lib \
     --with-apxs=%{_sbindir}/apxs \
     --with-apr-config=%{_bindir}/apr-1-config
 make
@@ -59,7 +59,7 @@ install -d 755 %{buildroot}%{_sysconfdir}/httpd/modules.d
 install -d 755 %{buildroot}%{module_path}
 install -d 755 %{buildroot}%{_var}/www/mono
 install -d 755 %{buildroot}%{_var}/www/.wapi
-install -d 755 %{buildroot}%{_localstatedir}/lib/%{name}
+install -d 755 %{buildroot}/var/lib/%{name}
 
 # Mono Configuration for Apache
 install -m 644 mod_mono.conf %{buildroot}%{_sysconfdir}/httpd/modules.d/91_mod_mono.conf
@@ -98,4 +98,4 @@ rm -rf %{buildroot}
 %defattr(-,apache,apache)
 %dir %{_var}/www/mono
 %dir %{_var}/www/.wapi
-%dir %attr(0755,apache,apache) %{_localstatedir}/lib/%{name}
+%dir %attr(0755,apache,apache) /var/lib/%{name}
