@@ -19,6 +19,7 @@ Requires(pre):	apache >= 2.2.0
 Requires:	apache-conf >= 2.2.0
 Requires:	apache >= 2.2.0
 BuildRequires:	apache-devel >= 2.2.0
+BuildRequires:  glib2-devel
 BuildRequires:	automake1.7
 BuildRequires:	autoconf2.5
 BuildRequires:  file
