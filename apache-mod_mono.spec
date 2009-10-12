@@ -4,7 +4,7 @@
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
 Version:	2.4.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/
@@ -68,6 +68,16 @@ install -m 644 mod_mono.conf %{buildroot}%{_sysconfdir}/httpd/modules.d/91_mod_m
 # add examples
 echo "    Alias /mono \"%{_prefix}/lib/xsp/test\"" >> %{buildroot}%{_sysconfdir}/httpd/modules.d/91_mod_mono.conf
 
+cat >> %{buildroot}%{_sysconfdir}/httpd/modules.d/91_mod_mono.conf << EOF
+
+<Location /mono-ctrl>
+    SetHandler mono-ctrl
+    Order deny,allow
+    Deny from all
+    Allow from 127.0.0.1
+    ErrorDocument 403 "Access denied per %{_sysconfdir}/httpd/modules.d/91_mod_mono.conf"
+</Location>
+EOF
 
 install src/.libs/mod_mono.so %{buildroot}%{module_path}/mod_mono.so
 install -D man/mod_mono.8 %{buildroot}%{_mandir}/man8/mod_mono.8
