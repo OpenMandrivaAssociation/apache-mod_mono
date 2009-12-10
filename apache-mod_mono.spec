@@ -3,15 +3,15 @@
 
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
-Version:	2.4.2
-Release:	%mkrel 3
+Version:	2.4.3
+Release:	%mkrel 1
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/
 Source0:	http://www.go-mono.com/sources/mod_mono/%{module_name}-%{version}.tar.bz2
 Patch0:		mod_mono-2.4-avoid-version.diff
 Patch1:		mod_mono-1.1.17-apache223.patch
-Patch2:		mod_mono-2.4-mdv.patch
+Patch2:		mod_mono-2.4.3-mdv.patch
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):	apache-conf >= 2.2.0
