@@ -4,7 +4,7 @@
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
 Version:	2.8
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/
@@ -20,7 +20,7 @@ Requires:	apache-conf >= 2.2.0
 Requires:	apache >= 2.2.0
 BuildRequires:	apache-devel >= 2.2.0
 BuildRequires:  glib2-devel
-BuildRequires:	automake1.7
+BuildRequires:	automake
 BuildRequires:	autoconf2.5
 BuildRequires:  file
 Requires:	xsp >= 1.2.5
@@ -42,7 +42,7 @@ mod-mono server running.
 #autoreconf -fi
 #export WANT_AUTOCONF_2_5=1
 rm -f configure
-libtoolize --copy --force; aclocal-1.7; automake-1.7 --add-missing --copy; autoconf --force ||autoconf
+libtoolize --copy --force; aclocal; automake --add-missing --copy; autoconf --force ||autoconf
 
 %build
 
