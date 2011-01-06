@@ -3,13 +3,13 @@
 
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
-Version:	2.8
-Release:	%mkrel 3
+Version:	2.8.2
+Release:	%mkrel 1
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/
 Source0:	http://www.go-mono.com/sources/mod_mono/%{module_name}-%{version}.tar.bz2
-Patch0:		mod_mono-2.6-avoid-version.diff
+Patch0:		mod_mono-2.8.2-avoid-version.diff
 Patch1:		mod_mono-1.1.17-apache223.patch
 Patch2:		mod_mono-2.6-mdv.patch
 Requires(pre): rpm-helper
@@ -36,9 +36,7 @@ mod-mono server running.
 %prep
 
 %setup -q -n %{module_name}-%{version}
-%patch0 -p1
-%patch1 -p1 -b .apache223
-%patch2 -p1 -b .mdv
+%apply_patches
 #autoreconf -fi
 #export WANT_AUTOCONF_2_5=1
 rm -f configure
