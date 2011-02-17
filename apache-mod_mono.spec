@@ -3,8 +3,8 @@
 
 Summary:	Mono module for Apache 2
 Name:		apache-mod_mono
-Version:	2.8.2
-Release:	%mkrel 2
+Version:	2.10
+Release:	%mkrel 1
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mono-project.com/
