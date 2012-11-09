@@ -1,0 +1,27 @@
+diff -p -up mod_mono-2.6/mod_mono.conf.in.mdv mod_mono-2.6/mod_mono.conf.in
+--- mod_mono-2.6/mod_mono.conf.in.mdv	2009-09-25 18:01:20.000000000 +0200
++++ mod_mono-2.6/mod_mono.conf.in	2009-10-01 23:03:34.000000000 +0200
+@@ -1,12 +1,4 @@
+-# mod_mono.conf
+-
+-# Achtung! This file may be overwritten
+-# Use 'include mod_mono.conf' from other configuration file
+-# to load mod_mono module.
+-
+-<IfModule !mod_mono.c>
+-    LoadModule mono_module @APXS_LIBEXECDIR@/mod_mono.so
+-</IfModule>
++LoadModule mono_module extramodules/mod_mono.so
+ 
+ <IfModule mod_headers.c>
+     Header set X-Powered-By "Mono"
+@@ -38,3 +30,9 @@ AddType application/x-asp-net .dll
+ DirectoryIndex index.aspx
+ DirectoryIndex Default.aspx
+ DirectoryIndex default.aspx
++
++# for ASP 2.0:
++# MonoServerPath /usr/bin/mod-mono-server2
++
++MonoUnixSocket /var/lib/apache-mod_mono/mod_mono_server
++Listen 8080

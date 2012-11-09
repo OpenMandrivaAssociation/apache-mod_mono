@@ -1,0 +1,11 @@
+--- mod_mono-2.8.2/src/Makefile.am.orig	2011-01-04 00:40:42.000000000 +0100
++++ mod_mono-2.8.2/src/Makefile.am	2011-01-06 12:51:06.000000000 +0100
+@@ -2,7 +2,7 @@
+ 
+ lib_LTLIBRARIES = mod_mono.la
+ mod_mono_la_SOURCES = mod_mono.c mod_mono.h mono-io-portability.c mono-io-portability.h glib_compat.h glib_compat.c
+-mod_mono_la_LDFLAGS = -module
++mod_mono_la_LDFLAGS = -module -avoid-version
+ mod_mono_la_DEPENDENCIES = ../include/mod_mono_config.h
+ #/usr/sbin/apxs -c -I../include -I. -D HAVE_CONFIG_H mod_mono.c
+ mod_mono_la_CFLAGS = -Wall -DDFLT_MONO_CONFIG_DIR=\"$(DFLT_MONO_CONFIG_DIR)\"
