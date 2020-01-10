@@ -36,7 +36,7 @@ mod-mono server running.
 %prep
 
 %setup -q -n %{module_name}-%{version}
-%apply_patches
+%autopatch -p1
 #autoreconf -fi
 #export WANT_AUTOCONF_2_5=1
 rm -f configure
