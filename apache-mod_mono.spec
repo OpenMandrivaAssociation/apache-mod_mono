@@ -7,7 +7,7 @@ Version:	2.10
 Release:	%mkrel 3
 License:	Apache License
 Group:		System/Servers
-URL:		http://www.mono-project.com/
+URL:		https://www.mono-project.com/
 Source0:	http://www.go-mono.com/sources/mod_mono/%{module_name}-%{version}.tar.bz2
 Patch0:		mod_mono-2.8.2-avoid-version.diff
 Patch1:		mod_mono-1.1.17-apache223.patch
